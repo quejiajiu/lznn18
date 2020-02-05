@@ -26,13 +26,9 @@ export default {
       txt: {}
     };
   },
-  async asyncData({ $axios }) {
-    // let res = await $axios.get(`../json/info.txt`);
-    // console.log( $axios.get,1111 );
-  },
-  mounted() {
+  created() {
     this.$axios
-      .get("../txt/info.txt")
+      .get("txt/info.txt")
       .then(response => {
         console.log(response);
         this.txt = {
@@ -41,7 +37,7 @@ export default {
         };
       })
       .catch(response => {
-        alert("错误：" + response);
+        // alert("错误：" + response);
       });
   }
 };

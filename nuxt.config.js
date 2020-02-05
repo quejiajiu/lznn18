@@ -1,9 +1,15 @@
-
+const routerBase = process.env.DEPLOY_ENV !== 'GH_PAGES' ? {
+  router: {
+    base: '/lznn18/'
+  }
+} : {}
+console.log(process.env)
 export default {
   mode: 'universal',
   /*
   ** Headers of the page
   */
+  // ...routerBase,
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -28,6 +34,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/axios'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -44,6 +51,9 @@ export default {
     // prefix: '/',
     // proxy: true
   },
+  // generate: {
+  //   subFolders: flase
+  // },
   /*
   ** Build configuration
   */

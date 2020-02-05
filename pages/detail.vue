@@ -53,7 +53,7 @@ export default {
     getfile() {
       let i = this.arr.length + 1;
       this.$axios
-        .get(`../txt/${i}.txt`)
+        .get(`txt/${i}.txt`)
         .then(response => {
           let index = response.data.indexOf("\n");
           let title = response.data.substring(0, index);

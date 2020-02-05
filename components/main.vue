@@ -16,7 +16,8 @@ export default {
       default() {
         return {
           title: "",
-          content: ""
+          content: "",
+          info: ""
         };
       }
     }
